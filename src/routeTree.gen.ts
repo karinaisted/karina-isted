@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ProblemstillingerRouteImport } from './routes/problemstillinger'
+import { Route as PriserOgVilkaarRouteImport } from './routes/priser-og-vilkaar'
+import { Route as OmMigRouteImport } from './routes/om-mig'
+import { Route as MinTilgangRouteImport } from './routes/min-tilgang'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProblemstillingerRoute = ProblemstillingerRouteImport.update({
+  id: '/problemstillinger',
+  path: '/problemstillinger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PriserOgVilkaarRoute = PriserOgVilkaarRouteImport.update({
+  id: '/priser-og-vilkaar',
+  path: '/priser-og-vilkaar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OmMigRoute = OmMigRouteImport.update({
+  id: '/om-mig',
+  path: '/om-mig',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinTilgangRoute = MinTilgangRouteImport.update({
+  id: '/min-tilgang',
+  path: '/min-tilgang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/min-tilgang': typeof MinTilgangRoute
+  '/om-mig': typeof OmMigRoute
+  '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
+  '/problemstillinger': typeof ProblemstillingerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/min-tilgang': typeof MinTilgangRoute
+  '/om-mig': typeof OmMigRoute
+  '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
+  '/problemstillinger': typeof ProblemstillingerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kontakt': typeof KontaktRoute
+  '/min-tilgang': typeof MinTilgangRoute
+  '/om-mig': typeof OmMigRoute
+  '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
+  '/problemstillinger': typeof ProblemstillingerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/kontakt'
+    | '/min-tilgang'
+    | '/om-mig'
+    | '/priser-og-vilkaar'
+    | '/problemstillinger'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/kontakt'
+    | '/min-tilgang'
+    | '/om-mig'
+    | '/priser-og-vilkaar'
+    | '/problemstillinger'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/kontakt'
+    | '/min-tilgang'
+    | '/om-mig'
+    | '/priser-og-vilkaar'
+    | '/problemstillinger'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KontaktRoute: typeof KontaktRoute
+  MinTilgangRoute: typeof MinTilgangRoute
+  OmMigRoute: typeof OmMigRoute
+  PriserOgVilkaarRoute: typeof PriserOgVilkaarRoute
+  ProblemstillingerRoute: typeof ProblemstillingerRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/problemstillinger': {
+      id: '/problemstillinger'
+      path: '/problemstillinger'
+      fullPath: '/problemstillinger'
+      preLoaderRoute: typeof ProblemstillingerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/priser-og-vilkaar': {
+      id: '/priser-og-vilkaar'
+      path: '/priser-og-vilkaar'
+      fullPath: '/priser-og-vilkaar'
+      preLoaderRoute: typeof PriserOgVilkaarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/om-mig': {
+      id: '/om-mig'
+      path: '/om-mig'
+      fullPath: '/om-mig'
+      preLoaderRoute: typeof OmMigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/min-tilgang': {
+      id: '/min-tilgang'
+      path: '/min-tilgang'
+      fullPath: '/min-tilgang'
+      preLoaderRoute: typeof MinTilgangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +177,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KontaktRoute: KontaktRoute,
+  MinTilgangRoute: MinTilgangRoute,
+  OmMigRoute: OmMigRoute,
+  PriserOgVilkaarRoute: PriserOgVilkaarRoute,
+  ProblemstillingerRoute: ProblemstillingerRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
