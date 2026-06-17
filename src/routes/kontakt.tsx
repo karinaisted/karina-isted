@@ -45,16 +45,14 @@ function ContactPage() {
               Book en tid direkte
             </h2>
             <p className="text-zinc-600 mb-6 leading-relaxed">
-              Du kan booke online via min behandlerportal hos Terapeut Booking.
+              Du kan booke online via min behandlerportal.
             </p>
-            <a
-              href="https://www.terapeutbooking.dk/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 bg-sage text-white px-5 py-3 rounded-md text-sm font-medium hover:bg-sage/90 transition-colors"
-            >
-              Gå til online booking
-            </a>
+            <iframe
+              src="https://system.easypractice.net/book/psykolog-karina-isted"
+              title="Book en tid hos psykolog Karina Isted"
+              className="w-full h-[700px] rounded-xl border border-black/5"
+              loading="lazy"
+            />
           </div>
 
           <div className="bg-white ring-1 ring-black/5 rounded-2xl p-8">
