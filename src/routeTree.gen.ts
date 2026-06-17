@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ProblemstillingerRouteImport } from './routes/problemstillinger'
 import { Route as PriserOgVilkaarRouteImport } from './routes/priser-og-vilkaar'
 import { Route as OmMigRouteImport } from './routes/om-mig'
@@ -16,6 +17,11 @@ import { Route as MinTilgangRouteImport } from './routes/min-tilgang'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProblemstillingerRoute = ProblemstillingerRouteImport.update({
   id: '/problemstillinger',
   path: '/problemstillinger',
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/om-mig': typeof OmMigRoute
   '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
   '/problemstillinger': typeof ProblemstillingerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/om-mig': typeof OmMigRoute
   '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
   '/problemstillinger': typeof ProblemstillingerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +79,7 @@ export interface FileRoutesById {
   '/om-mig': typeof OmMigRoute
   '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
   '/problemstillinger': typeof ProblemstillingerRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +90,7 @@ export interface FileRouteTypes {
     | '/om-mig'
     | '/priser-og-vilkaar'
     | '/problemstillinger'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +99,7 @@ export interface FileRouteTypes {
     | '/om-mig'
     | '/priser-og-vilkaar'
     | '/problemstillinger'
+    | '/sitemap.xml'
   id:
     | '__root__'
     | '/'
@@ -97,6 +108,7 @@ export interface FileRouteTypes {
     | '/om-mig'
     | '/priser-og-vilkaar'
     | '/problemstillinger'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,10 +118,18 @@ export interface RootRouteChildren {
   OmMigRoute: typeof OmMigRoute
   PriserOgVilkaarRoute: typeof PriserOgVilkaarRoute
   ProblemstillingerRoute: typeof ProblemstillingerRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/problemstillinger': {
       id: '/problemstillinger'
       path: '/problemstillinger'
@@ -162,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   OmMigRoute: OmMigRoute,
   PriserOgVilkaarRoute: PriserOgVilkaarRoute,
   ProblemstillingerRoute: ProblemstillingerRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
