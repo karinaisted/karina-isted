@@ -83,10 +83,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
       { name: "author", content: "Karina Isted" },
       { property: "og:title", content: "Karina Isted — Klinisk psykolog i Solrød Strand" },
-      { property: "og:description", content: "Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
+      { property: "og:description", content: "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Karina Isted" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Karina Isted — Klinisk psykolog i Solrød Strand" },
+      { name: "twitter:description", content: "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
     ],
     links: [
       {
