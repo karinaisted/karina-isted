@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as OmMigRouteImport } from './routes/om-mig'
+import { Route as MinTilgangRouteImport } from './routes/min-tilgang'
 import { Route as IndexRouteImport } from './routes/index'
 
 const OmMigRoute = OmMigRouteImport.update({
   id: '/om-mig',
   path: '/om-mig',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MinTilgangRoute = MinTilgangRouteImport.update({
+  id: '/min-tilgang',
+  path: '/min-tilgang',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/min-tilgang': typeof MinTilgangRoute
   '/om-mig': typeof OmMigRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/min-tilgang': typeof MinTilgangRoute
   '/om-mig': typeof OmMigRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/min-tilgang': typeof MinTilgangRoute
   '/om-mig': typeof OmMigRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/om-mig'
+  fullPaths: '/' | '/min-tilgang' | '/om-mig'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/om-mig'
-  id: '__root__' | '/' | '/om-mig'
+  to: '/' | '/min-tilgang' | '/om-mig'
+  id: '__root__' | '/' | '/min-tilgang' | '/om-mig'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MinTilgangRoute: typeof MinTilgangRoute
   OmMigRoute: typeof OmMigRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/om-mig'
       fullPath: '/om-mig'
       preLoaderRoute: typeof OmMigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/min-tilgang': {
+      id: '/min-tilgang'
+      path: '/min-tilgang'
+      fullPath: '/min-tilgang'
+      preLoaderRoute: typeof MinTilgangRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MinTilgangRoute: MinTilgangRoute,
   OmMigRoute: OmMigRoute,
 }
 export const routeTree = rootRouteImport
