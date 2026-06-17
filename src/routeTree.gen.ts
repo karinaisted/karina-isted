@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProblemstillingerRouteImport } from './routes/problemstillinger'
+import { Route as PriserOgVilkaarRouteImport } from './routes/priser-og-vilkaar'
 import { Route as OmMigRouteImport } from './routes/om-mig'
 import { Route as MinTilgangRouteImport } from './routes/min-tilgang'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ProblemstillingerRoute = ProblemstillingerRouteImport.update({
   id: '/problemstillinger',
   path: '/problemstillinger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PriserOgVilkaarRoute = PriserOgVilkaarRouteImport.update({
+  id: '/priser-og-vilkaar',
+  path: '/priser-og-vilkaar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OmMigRoute = OmMigRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/min-tilgang': typeof MinTilgangRoute
   '/om-mig': typeof OmMigRoute
+  '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
   '/problemstillinger': typeof ProblemstillingerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/min-tilgang': typeof MinTilgangRoute
   '/om-mig': typeof OmMigRoute
+  '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
   '/problemstillinger': typeof ProblemstillingerRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,38 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/min-tilgang': typeof MinTilgangRoute
   '/om-mig': typeof OmMigRoute
+  '/priser-og-vilkaar': typeof PriserOgVilkaarRoute
   '/problemstillinger': typeof ProblemstillingerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/min-tilgang' | '/om-mig' | '/problemstillinger'
+  fullPaths:
+    | '/'
+    | '/min-tilgang'
+    | '/om-mig'
+    | '/priser-og-vilkaar'
+    | '/problemstillinger'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/min-tilgang' | '/om-mig' | '/problemstillinger'
-  id: '__root__' | '/' | '/min-tilgang' | '/om-mig' | '/problemstillinger'
+  to:
+    | '/'
+    | '/min-tilgang'
+    | '/om-mig'
+    | '/priser-og-vilkaar'
+    | '/problemstillinger'
+  id:
+    | '__root__'
+    | '/'
+    | '/min-tilgang'
+    | '/om-mig'
+    | '/priser-og-vilkaar'
+    | '/problemstillinger'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MinTilgangRoute: typeof MinTilgangRoute
   OmMigRoute: typeof OmMigRoute
+  PriserOgVilkaarRoute: typeof PriserOgVilkaarRoute
   ProblemstillingerRoute: typeof ProblemstillingerRoute
 }
 
@@ -76,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/problemstillinger'
       fullPath: '/problemstillinger'
       preLoaderRoute: typeof ProblemstillingerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/priser-og-vilkaar': {
+      id: '/priser-og-vilkaar'
+      path: '/priser-og-vilkaar'
+      fullPath: '/priser-og-vilkaar'
+      preLoaderRoute: typeof PriserOgVilkaarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/om-mig': {
@@ -106,6 +139,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MinTilgangRoute: MinTilgangRoute,
   OmMigRoute: OmMigRoute,
+  PriserOgVilkaarRoute: PriserOgVilkaarRoute,
   ProblemstillingerRoute: ProblemstillingerRoute,
 }
 export const routeTree = rootRouteImport
