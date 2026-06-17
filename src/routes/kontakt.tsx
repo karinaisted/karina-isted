@@ -70,10 +70,10 @@ function ContactPage() {
             <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">Mail</p>
             <h2 className="font-serif text-2xl text-zinc-900 mb-3">
               <a
-                href="mailto:kontakt@karinaisted.dk"
+                href="mailto:karinaisted@proton.me"
                 className="hover:text-sage transition-colors"
               >
-                kontakt@karinaisted.dk
+                karinaisted@proton.me
               </a>
             </h2>
             <p className="text-zinc-600 leading-relaxed">

@@ -44,7 +44,7 @@ export function SiteFooter() {
                 Kontakt
               </h5>
               <p className="text-sm text-zinc-600 leading-loose">
-                kontakt@karinaisted.dk
+                karinaisted@proton.me
               </p>
             </div>
           </div>
