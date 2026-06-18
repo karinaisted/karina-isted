@@ -5,6 +5,7 @@ import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
 import clinicTable from "@/assets/clinic-table.jpg.asset.json";
 import karinaPortrait from "@/assets/karina-portrait.jpg.asset.json";
+import clinicToys from "@/assets/clinic-toys.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
