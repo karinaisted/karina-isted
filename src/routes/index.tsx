@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
-import karinaPortrait from "@/assets/karina-portrait.jpg.asset.json";
+import karinaPortrait from "@/assets/karina-portrait.png.asset.json";
 import clinicToys from "@/assets/clinic-toys.png.asset.json";
 
 
