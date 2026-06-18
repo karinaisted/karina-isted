@@ -120,7 +120,7 @@ function Index() {
               Hvornår giver det mening at søge hjælp?
             </h2>
             <p className="text-base text-zinc-600 leading-relaxed text-pretty">
-              At opleve at ens barn ikke trives er slidsomt for hele familien. Det kan være svært at vide, om barnets udfordringer er almene for alderen — men det er afgørende at tage sin bekymring som forælder alvorlig og søge støtte tidligt.
+              At opleve at ens barn ikke trives er slidsomt for hele familien. Det kan være svært at vide, om barnets udfordringer er almene for alderen, men det er afgørende at tage sin bekymring som forælder alvorlig og søge støtte tidligt.
             </p>
           </div>
 
