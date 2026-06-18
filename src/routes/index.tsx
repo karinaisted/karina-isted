@@ -3,8 +3,8 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
-import clinicTable from "@/assets/clinic-table.jpg.asset.json";
 import karinaPortrait from "@/assets/karina-portrait.jpg.asset.json";
+import clinicToys from "@/assets/clinic-toys.png.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -32,8 +32,7 @@ const heroImages = [
   { src: karinaPortrait.url, alt: "Karina Isted i samtalerummet" },
   { src: clinicSkylight.url, alt: "Lyst samtalerum med ovenlysvinduer og rattanstole i Solrød Strand" },
   { src: clinicChairs.url, alt: "Hyggelig siddegruppe med rattanstole og blomster" },
-  { src: clinicTable.url, alt: "Lyst arbejdsbord i klinikken med plads til samtaler og leg" },
-  
+  { src: clinicToys.url, alt: "Hyggeligt legeværelse med bamser, bøger og legetøj i klinikken" },
 ];
 
 const issues = [
