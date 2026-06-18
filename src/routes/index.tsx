@@ -9,13 +9,13 @@ import karinaPortrait from "@/assets/karina-portrait.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Karina Isted — Klinisk psykolog for børn og unge i Solrød Strand" },
+      { title: "Karina Isted. Klinisk psykolog for børn og unge i Solrød Strand" },
       {
         name: "description",
         content:
           "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge, hyggelige rammer i Solrød Strand.",
       },
-      { property: "og:title", content: "Karina Isted — Klinisk psykolog i Solrød Strand" },
+      { property: "og:title", content: "Karina Isted. Klinisk psykolog i Solrød Strand" },
       {
         property: "og:description",
         content: "Samtaler til børn, unge og forældre i trygge, hyggelige rammer i Solrød Strand.",

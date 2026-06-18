@@ -3,13 +3,13 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/min-tilgang")({
   head: () => ({
     meta: [
-      { title: "Min tilgang — Karina Isted" },
+      { title: "Min tilgang. Karina Isted" },
       {
         name: "description",
         content:
           "Jeg arbejder med tilknytningsteori, psykodynamisk og systemisk tilgang. Forældre er den vigtigste samarbejdspartner.",
       },
-      { property: "og:title", content: "Min tilgang — Karina Isted" },
+      { property: "og:title", content: "Min tilgang. Karina Isted" },
       {
         property: "og:description",
         content: "Sådan arbejder jeg med børn, unge og familier.",
@@ -28,11 +28,11 @@ const principles = [
   },
   {
     title: "Forældre er den vigtigste samarbejdspartner",
-    body: "I kender jeres barn bedst. Mange har prøvet meget selv, før de søger hjælp — det respekterer jeg, og vi bygger forløbet på jeres viden.",
+    body: "I kender jeres barn bedst. Mange har prøvet meget selv, før de søger hjælp, det respekterer jeg, og vi bygger forløbet på jeres viden.",
   },
   {
     title: "Hele familien påvirkes",
-    body: "Mistrivsel rammer ikke kun barnet. Skyld, skam og sorg fylder ofte hos forældrene — det er en del af arbejdet at give plads til.",
+    body: "Mistrivsel rammer ikke kun barnet. Skyld, skam og sorg fylder ofte hos forældrene, det er en del af arbejdet at give plads til.",
   },
   {
     title: "Tryghed i rummet",
@@ -48,14 +48,14 @@ function ApproachPage() {
           Min tilgang
         </span>
         <h1 className="font-serif text-4xl md:text-5xl text-zinc-900 leading-tight mb-10 text-balance">
-          Forståelse først — forandring derfra
+          Forståelse først. Forandring derfra
         </h1>
         <div className="space-y-6 text-zinc-700 text-lg leading-relaxed">
           <p>
             Jeg kombinerer pædagogisk viden og erfaring fra daginstitutioner og
             skoler med psykologfagligt blik på børns udvikling og trivsel. I mit
             arbejde er jeg særligt optaget af at forstå, hvad der ligger
-            bagvedliggende for barnets adfærd — hvilke følelser og behov forsøger
+            bagvedliggende for barnets adfærd, hvilke følelser og behov forsøger
             barnet at kommunikere?
           </p>
           <p>
