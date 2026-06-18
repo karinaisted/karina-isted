@@ -48,7 +48,7 @@ function ApproachPage() {
           Min tilgang
         </span>
         <h1 className="font-serif text-4xl md:text-5xl text-zinc-900 leading-tight mb-10 text-balance">
-          Forståelse først. Forandring derfra
+          Forståelse først – Forandring derfra
         </h1>
         <div className="space-y-6 text-zinc-700 text-lg leading-relaxed">
           <p>
