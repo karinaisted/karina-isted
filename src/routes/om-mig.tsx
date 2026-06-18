@@ -4,13 +4,13 @@ import portrait from "@/assets/karina-portrait.jpg.asset.json";
 export const Route = createFileRoute("/om-mig")({
   head: () => ({
     meta: [
-      { title: "Om mig — Karina Isted" },
+      { title: "Om mig. Karina Isted" },
       {
         name: "description",
         content:
           "Autoriseret klinisk psykolog, uddannet fra SDU, med baggrund som pædagog og specialiseret i legeterapi.",
       },
-      { property: "og:title", content: "Om mig — Karina Isted" },
+      { property: "og:title", content: "Om mig. Karina Isted" },
       {
         property: "og:description",
         content:
