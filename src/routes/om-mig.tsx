@@ -43,7 +43,7 @@ function AboutPage() {
         </div>
         <div className="prose-content space-y-6 text-zinc-700 text-lg leading-relaxed">
           <p>
-            Jeg er uddannet psykolog fra Syddansk Universitet, autoriseret af
+            Jeg er uddannet psykolog fra Syddansk Universitet i 2021, autoriseret af
             Styrelsen for Patientsikkerhed og har gennemført praksisuddannelse for
             psykologer (klinisk psykolog). Jeg har desuden en 1-årig uddannelse i
             legeterapi ved Institut for Legeterapi ved Jytte Mielcke. I 2013 blev
