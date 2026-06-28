@@ -7,7 +7,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  nitro: false,
   tanstackStart: {
+    // SSR entry compiled at dist/server/server.js for the preview/prerender server.
+    server: { entry: "server" },
     // Build a pure SPA: prerender the shell HTML and let the client router
     // take over for all routes. Required for static / GitHub Pages hosting.
     spa: { enabled: true },
