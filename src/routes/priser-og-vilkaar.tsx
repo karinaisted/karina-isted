@@ -65,6 +65,13 @@ function PricingPage() {
         </section>
 
         <section className="mb-12">
+          <h2 className="font-serif text-2xl text-zinc-900 mb-4">Lokation og format</h2>
+          <p className="text-zinc-700 leading-relaxed">
+            Samtalerne foregår i klinikken i Solrød Strand. Der er også mulighed for konsultation online eller på telefon.
+          </p>
+        </section>
+
+        <section className="mb-12">
           <h2 className="font-serif text-2xl text-zinc-900 mb-4">Tilskud</h2>
           <div className="space-y-4 text-zinc-700 leading-relaxed">
             <p>
