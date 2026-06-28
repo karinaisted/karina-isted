@@ -8,10 +8,8 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    // SSR error wrapper entry.
-    server: { entry: "server" },
     // Build a pure SPA: prerender the shell HTML and let the client router
-    // take over for all routes. Required for GitHub Pages hosting.
+    // take over for all routes. Required for static / GitHub Pages hosting.
     spa: { enabled: true },
     pages: [
       { path: "/", prerender: { enabled: true } },
