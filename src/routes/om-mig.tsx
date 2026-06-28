@@ -78,7 +78,7 @@ function AboutPage() {
               <p className="text-xs uppercase tracking-widest text-zinc-400 mb-2">
                 {c.k}
               </p>
-              <p className="text-sm font-medium text-zinc-800">{c.v}</p>
+              <p className="text-sm font-medium text-zinc-800 whitespace-pre-line">{Array.isArray(c.v) ? c.v.join("\n") : c.v}</p>
             </div>
           ))}
         </div>
