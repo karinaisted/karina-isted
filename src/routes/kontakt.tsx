@@ -84,6 +84,17 @@ function ContactPage() {
             </p>
           </div>
 
+          <div className="bg-white ring-1 ring-black/5 rounded-2xl p-8">
+            <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
+              Find vej
+            </p>
+            <p className="text-zinc-600 leading-relaxed">
+              Klinikken ligger i Solrød Centret i gåafstand fra S-tog og busser samt 5 minutters kørsel fra Køge Bugt motorvejen. Der er mulighed for parkering ved Solrød Centret.
+              <br /><br />
+              Adressen er: Solrød Center 70, 1 sal, 2680 Solrød Strand. Klinikken er en del af klinikfællesskabet Solrød Sundhedshus.
+            </p>
+          </div>
+
           <div className="bg-sand-muted ring-1 ring-black/5 rounded-2xl p-8">
             <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
               Adresse
