@@ -44,7 +44,7 @@ const topics = [
   },
   {
     title: "Forældrerådgivning",
-    body: "Nogle gange er det jer som forældre, der har størst behov for et rum at tænke i. Forløb kan tilrettelægges som ren forældrerådgivning, hvor vi sammen finder vej i de udfordringer, I står med.",
+    body: "Nogle gange er det jer som forældre, der har størst behov for et rum at tænke i. Der kan i forældreskabet melde sig spørgsmål og tvivl om opdragelse, trivsel, sociale vanskeligheder, bekymring for udviklingsforstyrrelser, mobning osv. Gennem forældrerådgivning kan vi sammen finde vej i de udfordringer, I står med, med afsæt i den nyeste psykologfaglige viden om børns udvikling og behov samt med øje for jeres families værdier.",
   },
 ];
 
