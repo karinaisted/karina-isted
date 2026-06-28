@@ -88,6 +88,9 @@ function ContactPage() {
             <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
               Find vej
             </p>
+            <h2 className="font-serif text-2xl text-zinc-900 mb-3">
+              Kom nemt hertil
+            </h2>
             <p className="text-zinc-600 leading-relaxed">
               Klinikken ligger i Solrød Centret i gåafstand fra S-tog og busser samt 5 minutters kørsel fra Køge Bugt motorvejen. Der er mulighed for parkering ved Solrød Centret.
               <br /><br />
