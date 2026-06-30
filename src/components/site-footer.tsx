@@ -31,11 +31,16 @@ export function SiteFooter() {
               <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
                 Find mig
               </h5>
-              <p className="text-sm text-zinc-600 leading-loose">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Solrød+Center+70,+2680+Solrød+Strand"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-zinc-600 leading-loose hover:text-sage transition-colors"
+              >
                 Solrød Center 70, 1. Sal.
                 <br />
                 2680 Solrød Strand
-              </p>
+              </a>
             </div>
             <div>
               <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
