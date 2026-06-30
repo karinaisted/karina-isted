@@ -102,21 +102,16 @@ function Index() {
                     loading={i === 0 ? "eager" : "lazy"}
                   />
                 ))}
-                <div className="absolute bottom-1 right-1 flex">
+                <div className="absolute bottom-4 right-4 flex gap-1.5">
                   {heroImages.map((_, i) => (
                     <button
                       key={i}
-                      type="button"
                       onClick={() => setActive(i)}
                       aria-label={`Vis billede ${i + 1}`}
-                      className="grid place-items-center h-11 w-11 bg-transparent touch-manipulation focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/80 rounded-md"
-                    >
-                      <span
-                        className={`block h-1.5 rounded-full transition-all ${
-                          i === active ? "w-6 bg-white" : "w-1.5 bg-white/60"
-                        }`}
-                      />
-                    </button>
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === active ? "w-6 bg-white" : "w-1.5 bg-white/60"
+                      }`}
+                    />
                   ))}
                 </div>
               </div>
