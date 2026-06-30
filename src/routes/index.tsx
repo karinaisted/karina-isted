@@ -5,7 +5,7 @@ import karinaClinicPortrait from "@/assets/karina-clinic-portrait.jpg.asset.json
 import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
 import clinicToys from "@/assets/clinic-toys.png.asset.json";
-import { assetUrl, responsiveImg } from "@/lib/asset-url";
+import { responsiveImg } from "@/lib/asset-url";
 
 
 export const Route = createFileRoute("/")({
