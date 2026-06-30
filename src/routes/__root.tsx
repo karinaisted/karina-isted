@@ -107,14 +107,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // Load Google Fonts CSS non-blocking: request as a stylesheet with
       // media="print" so it doesn't block render, then flip to "all" once
       // loaded. The <noscript> fallback below ensures functionality without JS.
+      // Non-blocking font CSS: request as "print" so it doesn't block render.
+      // The inline script in `scripts` below swaps it to "all" once loaded.
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
         media: "print",
-        onLoad: "this.media='all'",
+        "data-defer-style": "true",
       } as any,
     ],
     scripts: [
+      {
+        children:
+          "(function(){var l=document.querySelector('link[data-defer-style]');if(l){if(l.sheet){l.media='all';}else{l.addEventListener('load',function(){l.media='all';});}}})();",
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({
