@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <h4 className="font-serif text-2xl text-zinc-900 mb-6">Karina Isted</h4>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-8 max-w-[40ch]">
+            <p className="text-zinc-700 text-sm leading-relaxed mb-8 max-w-[40ch]">
               Autoriseret klinisk psykolog med praksis i Solrød Strand. Medlem af
               Dansk Psykologforening og uddannet i legeterapi.
             </p>
@@ -28,14 +28,14 @@ export function SiteFooter() {
           </div>
           <div className="grid sm:grid-cols-2 gap-12">
             <div>
-              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
+              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-600 mb-6">
                 Find mig
               </h5>
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Solrød+Center+70,+2680+Solrød+Strand"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-zinc-600 leading-loose hover:text-sage transition-colors"
+                className="inline-block py-2 text-sm text-zinc-700 leading-loose hover:text-sage transition-colors"
               >
                 Solrød Center 70, 1. Sal.
                 <br />
@@ -43,15 +43,14 @@ export function SiteFooter() {
               </a>
             </div>
             <div>
-              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
+              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-600 mb-6">
                 Kontakt
               </h5>
-              <p className="text-sm text-zinc-600 leading-loose">
-                <a href="mailto:karinaisted@proton.me" className="hover:text-sage transition-colors">
+              <p className="text-sm text-zinc-700 leading-loose flex flex-col gap-1">
+                <a href="mailto:karinaisted@proton.me" className="inline-block py-1 hover:text-sage transition-colors">
                   karinaisted@proton.me
                 </a>
-                <br />
-                <a href="tel:42664429" className="hover:text-sage transition-colors">
+                <a href="tel:42664429" className="inline-block py-1 hover:text-sage transition-colors">
                   42 66 44 29
                 </a>
               </p>
@@ -59,10 +58,10 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-20 pt-8 border-t border-zinc-950/5 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-xs text-zinc-400">
+          <p className="text-xs text-zinc-600">
             © {new Date().getFullYear()} Karina Isted. Alle rettigheder forbeholdes.
           </p>
-          <p className="text-xs text-zinc-400">Autoriseret af Styrelsen for Patientsikkerhed</p>
+          <p className="text-xs text-zinc-600">Autoriseret af Styrelsen for Patientsikkerhed</p>
         </div>
       </div>
     </footer>

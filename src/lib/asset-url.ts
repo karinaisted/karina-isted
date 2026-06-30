@@ -54,3 +54,36 @@ export function responsiveImg(
   const src = `${dir}/${stem}-${RESPONSIVE_WIDTHS[RESPONSIVE_WIDTHS.length - 1]}${ext}`;
   return { src, srcSet, sizes };
 }
+
+export type PictureSources = {
+  src: string;
+  srcSet?: string;
+  sizes: string;
+  avifSrcSet?: string;
+  webpSrcSet?: string;
+};
+
+/**
+ * Like responsiveImg, but also returns AVIF and WebP srcSets so callers can
+ * render a <picture> element with progressively better formats.
+ */
+export function responsivePicture(
+  asset: AssetPointer,
+  sizes: string = "100vw",
+): PictureSources {
+  if (import.meta.env.DEV) {
+    return { src: asset.url, sizes };
+  }
+  const base = import.meta.env.BASE_URL || "/";
+  const dir = `${base}cdn-assets/${asset.asset_id}`;
+  const [stem, ext] = splitExt(asset.original_filename);
+  const isRaster = /\.(jpe?g|png)$/i.test(ext);
+  if (!isRaster) {
+    return { src: `${dir}/${asset.original_filename}`, sizes };
+  }
+  const srcSet = RESPONSIVE_WIDTHS.map((w) => `${dir}/${stem}-${w}${ext} ${w}w`).join(", ");
+  const webpSrcSet = RESPONSIVE_WIDTHS.map((w) => `${dir}/${stem}-${w}.webp ${w}w`).join(", ");
+  const avifSrcSet = RESPONSIVE_WIDTHS.map((w) => `${dir}/${stem}-${w}.avif ${w}w`).join(", ");
+  const src = `${dir}/${stem}-${RESPONSIVE_WIDTHS[RESPONSIVE_WIDTHS.length - 1]}${ext}`;
+  return { src, srcSet, sizes, webpSrcSet, avifSrcSet };
+}

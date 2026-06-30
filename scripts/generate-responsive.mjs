@@ -42,6 +42,7 @@ async function processOne(file) {
     if (srcWidth && w > srcWidth) continue;
     const outRaster = `${base}-${w}${ext}`;
     const outWebp = `${base}-${w}.webp`;
+    const outAvif = `${base}-${w}.avif`;
     if (!existsSync(outRaster)) {
       const pipe = sharp(file).resize({ width: w, withoutEnlargement: true });
       if (ext === ".png") await pipe.png({ quality: 80, compressionLevel: 9 }).toFile(outRaster);
@@ -51,6 +52,10 @@ async function processOne(file) {
     if (!existsSync(outWebp)) {
       await sharp(file).resize({ width: w, withoutEnlargement: true }).webp({ quality: 75 }).toFile(outWebp);
       created.push(outWebp);
+    }
+    if (!existsSync(outAvif)) {
+      await sharp(file).resize({ width: w, withoutEnlargement: true }).avif({ quality: 55, effort: 4 }).toFile(outAvif);
+      created.push(outAvif);
     }
   }
   return created;

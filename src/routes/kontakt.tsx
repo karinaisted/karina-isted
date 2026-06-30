@@ -15,9 +15,9 @@ export const Route = createFileRoute("/kontakt")({
         property: "og:description",
         content: "Sådan kontakter du mig. Online booking, telefon og mail.",
       },
-      { property: "og:url", content: "/kontakt" },
+      { property: "og:url", content: "https://karinaisted.dk/kontakt" },
     ],
-    links: [{ rel: "canonical", href: "/kontakt" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/kontakt" }],
     scripts: [
       breadcrumbLd([
         { name: "Hjem", path: "/" },
@@ -45,7 +45,7 @@ function ContactPage() {
 
         <div className="space-y-6">
           <div className="bg-white ring-1 ring-black/5 rounded-2xl p-8">
-            <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
+            <p className="text-xs uppercase tracking-widest text-zinc-600 mb-3">
               Online booking
             </p>
             <h2 className="font-serif text-2xl text-zinc-900 mb-4">
@@ -63,7 +63,7 @@ function ContactPage() {
           </div>
 
           <div className="bg-white ring-1 ring-black/5 rounded-2xl p-8">
-            <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
+            <p className="text-xs uppercase tracking-widest text-zinc-600 mb-3">
               Telefon
             </p>
             <h2 className="font-serif text-2xl text-zinc-900 mb-3">
@@ -78,7 +78,7 @@ function ContactPage() {
           </div>
 
           <div className="bg-white ring-1 ring-black/5 rounded-2xl p-8">
-            <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">Mail</p>
+            <p className="text-xs uppercase tracking-widest text-zinc-600 mb-3">Mail</p>
             <h2 className="font-serif text-2xl text-zinc-900 mb-3">
               <a
                 href="mailto:karinaisted@proton.me"
@@ -96,7 +96,7 @@ function ContactPage() {
           </div>
 
           <div className="bg-white ring-1 ring-black/5 rounded-2xl p-8">
-            <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
+            <p className="text-xs uppercase tracking-widest text-zinc-600 mb-3">
               Find vej
             </p>
             <h2 className="font-serif text-2xl text-zinc-900 mb-3">
@@ -110,7 +110,7 @@ function ContactPage() {
           </div>
 
           <div className="bg-sand-muted ring-1 ring-black/5 rounded-2xl p-8">
-            <p className="text-xs uppercase tracking-widest text-zinc-400 mb-3">
+            <p className="text-xs uppercase tracking-widest text-zinc-600 mb-3">
               Adresse
             </p>
             <p className="text-zinc-700 leading-relaxed">

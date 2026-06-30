@@ -26,7 +26,7 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm font-medium text-zinc-500 hover:text-sage transition-colors"
+              className="text-sm font-medium text-zinc-700 hover:text-sage transition-colors"
               activeProps={{ className: "text-sm font-medium text-ink" }}
               activeOptions={{ exact: item.to === "/" }}
             >
@@ -36,7 +36,7 @@ export function SiteHeader() {
         </div>
         <button
           aria-label="Menu"
-          className="md:hidden size-10 grid place-items-center"
+          className="md:hidden min-h-11 min-w-11 grid place-items-center"
           onClick={() => setOpen((v) => !v)}
         >
           <Menu className="w-5 h-5 text-zinc-800" />

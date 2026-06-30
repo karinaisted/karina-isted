@@ -15,9 +15,9 @@ export const Route = createFileRoute("/problemstillinger")({
         property: "og:description",
         content: "Eksempler på problemstillinger, jeg kan hjælpe børn, unge og familier med.",
       },
-      { property: "og:url", content: "/problemstillinger" },
+      { property: "og:url", content: "https://karinaisted.dk/problemstillinger" },
     ],
-    links: [{ rel: "canonical", href: "/problemstillinger" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/problemstillinger" }],
     scripts: [
       breadcrumbLd([
         { name: "Hjem", path: "/" },

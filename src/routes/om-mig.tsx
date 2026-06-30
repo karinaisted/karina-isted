@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portrait from "@/assets/om-mig-portrait-v2.jpg.asset.json";
-import { responsiveImg } from "@/lib/asset-url";
+import { responsivePicture } from "@/lib/asset-url";
 import { breadcrumbLd, jsonLd } from "@/lib/json-ld";
 
 export const Route = createFileRoute("/om-mig")({
@@ -18,9 +18,9 @@ export const Route = createFileRoute("/om-mig")({
         content:
           "Autoriseret klinisk psykolog med baggrund i pædagogik og legeterapi.",
       },
-      { property: "og:url", content: "/om-mig" },
+      { property: "og:url", content: "https://karinaisted.dk/om-mig" },
     ],
-    links: [{ rel: "canonical", href: "/om-mig" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/om-mig" }],
     scripts: [
       jsonLd({
         "@type": "Person",
@@ -57,13 +57,28 @@ function AboutPage() {
         <h1 className="font-serif text-4xl md:text-5xl text-zinc-900 leading-tight mb-10 text-balance">
           Klinisk psykolog med rødder i pædagogikken
         </h1>
-        <div className="mb-12 overflow-hidden rounded-2xl ring-1 ring-black/5 bg-sand-muted">
-          <img
-            {...responsiveImg(portrait, "(min-width: 768px) 768px, 100vw")}
-            alt="Portræt af Karina Isted, autoriseret klinisk psykolog"
-            className="w-full h-auto object-cover"
-            loading="eager"
-          />
+        <div className="mb-12 overflow-hidden rounded-2xl ring-1 ring-black/5 bg-sand-muted aspect-[3/4]">
+          {(() => {
+            const p = responsivePicture(portrait, "(min-width: 768px) 768px, 100vw");
+            return (
+              <picture>
+                {p.avifSrcSet && <source type="image/avif" srcSet={p.avifSrcSet} sizes={p.sizes} />}
+                {p.webpSrcSet && <source type="image/webp" srcSet={p.webpSrcSet} sizes={p.sizes} />}
+                <img
+                  src={p.src}
+                  srcSet={p.srcSet}
+                  sizes={p.sizes}
+                  alt="Portræt af Karina Isted, autoriseret klinisk psykolog"
+                  width={768}
+                  height={1024}
+                  className="size-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </picture>
+            );
+          })()}
         </div>
         <div className="prose-content space-y-6 text-zinc-700 text-lg leading-relaxed">
           <p>
@@ -99,7 +114,7 @@ function AboutPage() {
             { k: "Specialisering", v: ["Børn og unge", "Legeterapi"] },
           ].map((c) => (
             <div key={c.k} className="bg-sand-muted rounded-xl p-6">
-              <p className="text-xs uppercase tracking-widest text-zinc-400 mb-2">
+              <p className="text-xs uppercase tracking-widest text-zinc-600 mb-2">
                 {c.k}
               </p>
               <p className="text-sm font-medium text-zinc-800 whitespace-pre-line">{Array.isArray(c.v) ? c.v.join("\n") : c.v}</p>
