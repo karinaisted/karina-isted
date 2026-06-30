@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { breadcrumbLd } from "@/lib/json-ld";
 
 export const Route = createFileRoute("/problemstillinger")({
   head: () => ({
@@ -17,6 +18,12 @@ export const Route = createFileRoute("/problemstillinger")({
       { property: "og:url", content: "/problemstillinger" },
     ],
     links: [{ rel: "canonical", href: "/problemstillinger" }],
+    scripts: [
+      breadcrumbLd([
+        { name: "Hjem", path: "/" },
+        { name: "Problemstillinger", path: "/problemstillinger" },
+      ]),
+    ],
   }),
   component: IssuesPage,
 });
