@@ -17,9 +17,10 @@ export default defineConfig({
   tanstackStart: {
     // SSR entry compiled at dist/server/server.js for the preview/prerender server.
     server: { entry: "server" },
-    // Build a pure SPA: prerender the shell HTML and let the client router
-    // take over for all routes. Required for static / GitHub Pages hosting.
-    spa: { enabled: true },
+    // Prerender every known route to its own index.html for static hosting.
+    // SPA shell mode is intentionally disabled — it made "/" emit an empty
+    // _shell.html instead of a content-rendered index.html, which tanked LCP
+    // and CLS on the home page.
     pages: [
       { path: "/", prerender: { enabled: true } },
       { path: "/om-mig", prerender: { enabled: true } },
