@@ -5,12 +5,14 @@ import karinaClinicPortrait from "@/assets/karina-clinic-portrait.jpg.asset.json
 import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
 import clinicToys from "@/assets/clinic-toys.png.asset.json";
-import { responsiveImg } from "@/lib/asset-url";
+import { responsivePicture } from "@/lib/asset-url";
 import { breadcrumbLd } from "@/lib/json-ld";
 
 
 export const Route = createFileRoute("/")({
-  head: () => ({
+  head: () => {
+    const lcp = responsivePicture(karinaClinicPortrait, HERO_SIZES);
+    return ({
     meta: [
       { title: "Karina Isted. Klinisk psykolog for børn og unge i Solrød Strand" },
       {
@@ -25,18 +27,32 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:url", content: "https://karinaisted.dk/" },
     ],
-    links: [{ rel: "canonical", href: "https://karinaisted.dk/" }],
+    links: [
+      { rel: "canonical", href: "https://karinaisted.dk/" },
+      // Preload the LCP hero image (AVIF preferred, with WebP fallback hint)
+      ...(lcp.avifSrcSet
+        ? [{
+            rel: "preload",
+            as: "image",
+            type: "image/avif",
+            imagesrcset: lcp.avifSrcSet,
+            imagesizes: lcp.sizes,
+            fetchpriority: "high",
+          } as any]
+        : [{ rel: "preload", as: "image", href: lcp.src, fetchpriority: "high" } as any]),
+    ],
     scripts: [breadcrumbLd([{ name: "Hjem", path: "/" }])],
-  }),
+  });
+  },
   component: Index,
 });
 
 const HERO_SIZES = "(min-width: 1024px) 45vw, 100vw";
 const heroImages = [
-  { ...responsiveImg(karinaClinicPortrait, HERO_SIZES), alt: "Karina Isted i samtalerummet" },
-  { ...responsiveImg(clinicSkylight, HERO_SIZES), alt: "Lyst samtalerum med ovenlysvinduer og rattanstole i Solrød Strand" },
-  { ...responsiveImg(clinicChairs, HERO_SIZES), alt: "Hyggelig siddegruppe med rattanstole og blomster" },
-  { ...responsiveImg(clinicToys, HERO_SIZES), alt: "Hyggeligt legeværelse med bamser, bøger og legetøj i klinikken" },
+  { ...responsivePicture(karinaClinicPortrait, HERO_SIZES), alt: "Karina Isted i samtalerummet" },
+  { ...responsivePicture(clinicSkylight, HERO_SIZES), alt: "Lyst samtalerum med ovenlysvinduer og rattanstole i Solrød Strand" },
+  { ...responsivePicture(clinicChairs, HERO_SIZES), alt: "Hyggelig siddegruppe med rattanstole og blomster" },
+  { ...responsivePicture(clinicToys, HERO_SIZES), alt: "Hyggeligt legeværelse med bamser, bøger og legetøj i klinikken" },
 ];
 
 const issues = [
@@ -88,19 +104,31 @@ function Index() {
             <div className="w-full lg:w-[45%]">
               <div className="relative aspect-[3/4] rounded-[min(1vw,12px)] outline-1 -outline-offset-1 outline-black/5 shadow-sm overflow-hidden bg-sand-muted">
                 {heroImages.map((img, i) => (
-                  <img
+                  <picture
                     key={img.src}
-                    src={img.src}
-                    srcSet={img.srcSet}
-                    sizes={img.sizes}
-                    alt={img.alt}
-                    width={1152}
-                    height={1536}
-                    className={`absolute inset-0 size-full object-cover transition-opacity duration-[1200ms] ${
+                    className={`absolute inset-0 size-full transition-opacity duration-[1200ms] ${
                       i === active ? "opacity-100" : "opacity-0"
                     }`}
-                    loading={i === 0 ? "eager" : "lazy"}
-                  />
+                  >
+                    {img.avifSrcSet && (
+                      <source type="image/avif" srcSet={img.avifSrcSet} sizes={img.sizes} />
+                    )}
+                    {img.webpSrcSet && (
+                      <source type="image/webp" srcSet={img.webpSrcSet} sizes={img.sizes} />
+                    )}
+                    <img
+                      src={img.src}
+                      srcSet={img.srcSet}
+                      sizes={img.sizes}
+                      alt={img.alt}
+                      width={1152}
+                      height={1536}
+                      className="size-full object-cover"
+                      loading={i === 0 ? "eager" : "lazy"}
+                      fetchPriority={i === 0 ? "high" : "auto"}
+                      decoding="async"
+                    />
+                  </picture>
                 ))}
                 <div className="absolute bottom-4 right-4 flex gap-1.5">
                   {heroImages.map((_, i) => (
