@@ -115,11 +115,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          "@id": "https://karina-isted.lovable.app/#business",
+          "@id": "https://karinaisted.dk/#business",
           name: "Psykolog Karina Isted",
           description:
             "Autoriseret klinisk psykolog med praksis i Solrød Strand. Samtaler til børn, unge og forældre.",
-          url: "https://karina-isted.lovable.app",
+          url: "https://karinaisted.dk",
           telephone: "+45 42 66 44 29",
           email: "karinaisted@proton.me",
           medicalSpecialty: ["Psychiatric", "Pediatric"],
@@ -144,7 +144,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Karina Isted",
-          url: "https://karina-isted.lovable.app",
+          url: "https://karinaisted.dk",
           inLanguage: "da-DK",
         }),
       },
