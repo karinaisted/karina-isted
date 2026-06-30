@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import portrait from "@/assets/om-mig-portrait-v2.jpg.asset.json";
 import { responsiveImg } from "@/lib/asset-url";
+import { breadcrumbLd, jsonLd } from "@/lib/json-ld";
 
 export const Route = createFileRoute("/om-mig")({
   head: () => ({
@@ -20,6 +21,28 @@ export const Route = createFileRoute("/om-mig")({
       { property: "og:url", content: "/om-mig" },
     ],
     links: [{ rel: "canonical", href: "/om-mig" }],
+    scripts: [
+      jsonLd({
+        "@type": "Person",
+        name: "Karina Isted",
+        jobTitle: "Autoriseret klinisk psykolog",
+        url: "https://karinaisted.dk/om-mig",
+        image: "https://karinaisted.dk/karina-portrait.jpg",
+        alumniOf: { "@type": "CollegeOrUniversity", name: "Syddansk Universitet" },
+        worksFor: { "@id": "https://karinaisted.dk/#business" },
+        knowsAbout: [
+          "Børnepsykologi",
+          "Legeterapi",
+          "Angst hos børn",
+          "Skolevægring",
+          "Forældrerådgivning",
+        ],
+      }),
+      breadcrumbLd([
+        { name: "Hjem", path: "/" },
+        { name: "Om mig", path: "/om-mig" },
+      ]),
+    ],
   }),
   component: AboutPage,
 });

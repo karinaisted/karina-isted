@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { breadcrumbLd, jsonLd } from "@/lib/json-ld";
 
 export const Route = createFileRoute("/priser-og-vilkaar")({
   head: () => ({
@@ -17,6 +18,57 @@ export const Route = createFileRoute("/priser-og-vilkaar")({
       { property: "og:url", content: "/priser-og-vilkaar" },
     ],
     links: [{ rel: "canonical", href: "/priser-og-vilkaar" }],
+    scripts: [
+      jsonLd({
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Hvad koster en samtale?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Samtale med barn eller ung (45 min) koster 1.200 kr. Samtale med forældre (60 min) koster 1.500 kr. Der faktureres pr. mail efter sessionen.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Hvordan melder jeg afbud?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Afbud meldes senest 24 timer før den aftalte tid via telefonbesked, SMS eller mail. Ved senere afbud eller udeblivelse opkræves fuldt honorar.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Kan jeg få tilskud til samtalerne?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Ja, hvis du er medlem af Sygeforsikringen danmark eller har en sundhedsforsikring. Jeg modtager dog ikke lægehenvisninger.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Hvor foregår samtalerne?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Samtalerne foregår i klinikken i Solrød Strand. Der er også mulighed for konsultation online eller på telefon.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Har psykologen tavshedspligt?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Ja, som psykolog er jeg underlagt tavshedspligt. Jeg har dog underretningspligt ved alvorlig bekymring for et barns trivsel eller fare for klienten selv eller andre.",
+            },
+          },
+        ],
+      }),
+      breadcrumbLd([
+        { name: "Hjem", path: "/" },
+        { name: "Priser og vilkår", path: "/priser-og-vilkaar" },
+      ]),
+    ],
   }),
   component: PricingPage,
 });

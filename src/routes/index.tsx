@@ -6,6 +6,7 @@ import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
 import clinicToys from "@/assets/clinic-toys.png.asset.json";
 import { responsiveImg } from "@/lib/asset-url";
+import { breadcrumbLd } from "@/lib/json-ld";
 
 
 export const Route = createFileRoute("/")({
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [breadcrumbLd([{ name: "Hjem", path: "/" }])],
   }),
   component: Index,
 });

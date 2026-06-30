@@ -89,8 +89,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Karina Isted. Klinisk psykolog i Solrød Strand" },
       { name: "twitter:description", content: "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
+      { property: "og:image", content: "https://karinaisted.dk/clinic-skylight.jpg" },
+      { name: "twitter:image", content: "https://karinaisted.dk/clinic-skylight.jpg" },
       { name: "theme-color", content: "#7FB5D8" },
     ],
     links: [
@@ -107,6 +107,45 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          "@id": "https://karinaisted.dk/#business",
+          name: "Psykolog Karina Isted",
+          description:
+            "Autoriseret klinisk psykolog med praksis i Solrød Strand. Samtaler til børn, unge og forældre.",
+          url: "https://karinaisted.dk",
+          telephone: "+45 42 66 44 29",
+          email: "karinaisted@proton.me",
+          medicalSpecialty: ["Psychiatric", "Pediatric"],
+          priceRange: "1.200–1.500 kr.",
+          image: "https://karinaisted.dk/clinic-skylight.jpg",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Solrød Center 70, 1. sal",
+            addressLocality: "Solrød Strand",
+            postalCode: "2680",
+            addressCountry: "DK",
+          },
+          areaServed: { "@type": "Place", name: "Solrød Strand, Greve, Køge, Sjælland" },
+          founder: { "@type": "Person", name: "Karina Isted" },
+          knowsLanguage: ["da"],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Karina Isted",
+          url: "https://karinaisted.dk",
+          inLanguage: "da-DK",
+        }),
       },
     ],
   }),
