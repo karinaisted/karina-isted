@@ -1,28 +1,19 @@
 ## Problem
-Lavkontrast tekst flere steder, særligt på sand-tonede baggrunde:
-- `--muted-foreground` er en lys blå-grå (oklch 0.554) som er for lys mod `bg-sand-muted` / `bg-sand-deep` kort
-- `text-zinc-500` i header-nav og `text-zinc-600` i footer (på mørke/sand baggrunde) — under WCAG AA
-- Diverse shadcn-komponenter (card description, breadcrumb, accordion-ikon) arver `text-muted-foreground`
+Karusel-dots i hero (`src/routes/index.tsx`, l. 105-116) er kun 6px høje og 6-24px brede — langt under WCAG/Apple/Google's anbefalede 44×44px touch target. De sidder også tæt med kun 6px mellemrum, så fingre rammer naboknappen.
 
-## Plan
+## Løsning
+Gør hver `<button>` til 44×44px usynligt klik-område via padding, og tegn den synlige dot via et indre `<span>`. Visuelt uændret, fysisk meget større tappable areal.
 
-**1. Forstærk semantiske tokens i `src/styles.css`**
-- Gør `--muted-foreground` markant mørkere og afstem den med sage/ink-paletten (fx oklch(0.38 0.015 140) — varm mørk grå der harmonerer med sand+sage) så den opfylder AA mod både hvid sand og `--color-sand-muted`.
-- Sæt `--foreground` til `--color-ink` og `--border` til en lidt mørkere sand-tone for konsistens.
+### Implementation i `src/routes/index.tsx`
+- Container-wrapper: behold `absolute bottom-4 right-4`, fjern `gap-1.5` (afstanden kommer fra knap-padding).
+- Hver knap:
+  - `className="grid place-items-center h-11 w-11 -m-3 first:ml-0 last:mr-0 bg-transparent"` (h-11/w-11 = 44px; `-m-3` trækker knapperne tilbage så de visuelt ligger tæt, men hitbox forbliver fuld 44px og overlapper naboernes padding kun lidt).
+  - Indre `<span>` med den nuværende dot-styling (`h-1.5 rounded-full w-6 bg-white` / `w-1.5 bg-white/60`).
+  - Behold `aria-label` og `onClick`.
+- Tilføj `touch-action: manipulation` og `focus-visible:outline` for tastatur.
 
-**2. Erstat hardcoded zinc-farver med tokens**
-- `src/components/site-header.tsx`: `text-zinc-500` → `text-ink-soft` (eller ny `text-foreground/80`).
-- `src/components/site-footer.tsx`: `text-zinc-600` → `text-ink-soft`.
-- Tjek øvrige sider for `text-zinc-*` / `text-stone-*` / `text-neutral-*` og udskift.
+### Verifikation
+- Playwright: åbn `/` på mobil viewport (375×800), tag elementscreenshot af karusel-dotsektionen før/efter, og log `getBoundingClientRect()` på hver knap for at bekræfte ≥44×44.
 
-**3. Audit-verifikation**
-- Kør Playwright efter ændringerne: åbn alle 6 sider, screenshot mobil (375px) + desktop (1280px), inspicér mod WCAG AA (4.5:1 normal, 3:1 large) på muted-tekst og links over sand-baggrunde.
-- Rapportér tilbage med før/efter-screenshots af 1–2 typiske sektioner.
-
-**4. Ingen ændringer i indhold eller layout** — kun farve-tokens og udskiftning af zinc-utility-klasser.
-
-## Filer der røres
-- `src/styles.css` (token-værdier)
-- `src/components/site-header.tsx`
-- `src/components/site-footer.tsx`
-- Evt. enkelte route-filer hvis zinc/stone dukker op
+## Filer
+- `src/routes/index.tsx` (kun karusel-knap-blokken)
