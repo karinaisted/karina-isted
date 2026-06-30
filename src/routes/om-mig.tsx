@@ -27,7 +27,7 @@ export const Route = createFileRoute("/om-mig")({
         name: "Karina Isted",
         jobTitle: "Autoriseret klinisk psykolog",
         url: "https://karinaisted.dk/om-mig",
-        image: "https://karinaisted.dk/cdn-assets/om-mig-portrait-v2.jpg",
+        image: "https://karinaisted.dk/karina-portrait.jpg",
         alumniOf: { "@type": "CollegeOrUniversity", name: "Syddansk Universitet" },
         worksFor: { "@id": "https://karinaisted.dk/#business" },
         knowsAbout: [
