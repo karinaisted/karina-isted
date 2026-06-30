@@ -141,7 +141,7 @@ function Index() {
                 </span>
                 <div>
                   <h3 className="font-medium text-zinc-900 mb-2">{it.title}</h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed">{it.desc}</p>
+                  <p className="text-sm text-zinc-700 leading-relaxed">{it.desc}</p>
                 </div>
               </div>
             ))}
