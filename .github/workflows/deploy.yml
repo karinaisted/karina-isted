@@ -36,9 +36,9 @@ jobs:
         run: bun run build
         env:
           NODE_ENV: production
-          # When hosting under https://<user>.github.io/<repo>/, set the base path.
-          # For a custom domain / username.github.io site, set BASE_PATH to "/" (or unset).
-          BASE_PATH: /karina-isted/
+          # Custom domain (karinaisted.dk) is served from the root, so BASE_PATH must be "/".
+          # If you ever switch back to https://<user>.github.io/<repo>/, set BASE_PATH: /karina-isted/
+          BASE_PATH: /
 
       - name: Prepare static output for GitHub Pages
         run: |
