@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { breadcrumbLd } from "@/lib/json-ld";
 
 export const Route = createFileRoute("/min-tilgang")({
   head: () => ({
