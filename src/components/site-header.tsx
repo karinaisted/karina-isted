@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { Menu } from "lucide-react";
 import logo from "@/assets/logo-karina.png.asset.json";
 import { assetUrl } from "@/lib/asset-url";
 
