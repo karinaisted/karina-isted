@@ -5,7 +5,7 @@ import karinaClinicPortrait from "@/assets/karina-clinic-portrait.jpg.asset.json
 import clinicSkylight from "@/assets/clinic-skylight.jpg.asset.json";
 import clinicChairs from "@/assets/clinic-chairs.jpg.asset.json";
 import clinicToys from "@/assets/clinic-toys.png.asset.json";
-import { assetUrl } from "@/lib/asset-url";
+import { assetUrl, responsiveImg } from "@/lib/asset-url";
 
 
 export const Route = createFileRoute("/")({
@@ -29,11 +29,12 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const HERO_SIZES = "(min-width: 1024px) 45vw, 100vw";
 const heroImages = [
-  { src: assetUrl(karinaClinicPortrait), alt: "Karina Isted i samtalerummet" },
-  { src: assetUrl(clinicSkylight), alt: "Lyst samtalerum med ovenlysvinduer og rattanstole i Solrød Strand" },
-  { src: assetUrl(clinicChairs), alt: "Hyggelig siddegruppe med rattanstole og blomster" },
-  { src: assetUrl(clinicToys), alt: "Hyggeligt legeværelse med bamser, bøger og legetøj i klinikken" },
+  { ...responsiveImg(karinaClinicPortrait, HERO_SIZES), alt: "Karina Isted i samtalerummet" },
+  { ...responsiveImg(clinicSkylight, HERO_SIZES), alt: "Lyst samtalerum med ovenlysvinduer og rattanstole i Solrød Strand" },
+  { ...responsiveImg(clinicChairs, HERO_SIZES), alt: "Hyggelig siddegruppe med rattanstole og blomster" },
+  { ...responsiveImg(clinicToys, HERO_SIZES), alt: "Hyggeligt legeværelse med bamser, bøger og legetøj i klinikken" },
 ];
 
 const issues = [
@@ -88,6 +89,8 @@ function Index() {
                   <img
                     key={img.src}
                     src={img.src}
+                    srcSet={img.srcSet}
+                    sizes={img.sizes}
                     alt={img.alt}
                     width={1152}
                     height={1536}
