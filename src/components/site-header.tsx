@@ -26,7 +26,7 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="text-sm font-medium text-zinc-500 hover:text-sage transition-colors"
+              className="text-sm font-medium text-zinc-700 hover:text-sage transition-colors"
               activeProps={{ className: "text-sm font-medium text-ink" }}
               activeOptions={{ exact: item.to === "/" }}
             >

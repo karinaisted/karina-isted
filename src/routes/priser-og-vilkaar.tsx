@@ -90,19 +90,19 @@ function PricingPage() {
             <div className="flex items-baseline justify-between p-6">
               <div>
                 <p className="font-medium text-zinc-900">Samtale med barn eller ung</p>
-                <p className="text-sm text-zinc-500 mt-1">45 minutter</p>
+                <p className="text-sm text-zinc-700 mt-1">45 minutter</p>
               </div>
               <p className="font-serif text-xl text-zinc-900">1.200 kr.</p>
             </div>
             <div className="flex items-baseline justify-between p-6">
               <div>
                 <p className="font-medium text-zinc-900">Samtale med forældre</p>
-                <p className="text-sm text-zinc-500 mt-1">60 minutter</p>
+                <p className="text-sm text-zinc-700 mt-1">60 minutter</p>
               </div>
               <p className="font-serif text-xl text-zinc-900">1.500 kr.</p>
             </div>
           </div>
-          <p className="text-sm text-zinc-500 mt-4">
+          <p className="text-sm text-zinc-700 mt-4">
             Der faktureres pr. mail efter sessionen.
           </p>
         </section>
@@ -138,7 +138,7 @@ function PricingPage() {
               høre deres retningslinjer og afregningsprocedure, og sende dine
               fakturaer ind selv. Jeg sender fakturaerne til dig på mail.
             </p>
-            <p className="text-zinc-500">
+            <p className="text-zinc-700">
               Bemærk: Jeg modtager desværre ikke lægehenvisninger.
             </p>
           </div>

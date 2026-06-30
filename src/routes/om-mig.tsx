@@ -99,7 +99,7 @@ function AboutPage() {
             { k: "Specialisering", v: ["Børn og unge", "Legeterapi"] },
           ].map((c) => (
             <div key={c.k} className="bg-sand-muted rounded-xl p-6">
-              <p className="text-xs uppercase tracking-widest text-zinc-400 mb-2">
+              <p className="text-xs uppercase tracking-widest text-zinc-600 mb-2">
                 {c.k}
               </p>
               <p className="text-sm font-medium text-zinc-800 whitespace-pre-line">{Array.isArray(c.v) ? c.v.join("\n") : c.v}</p>

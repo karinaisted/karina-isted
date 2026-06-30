@@ -7,7 +7,7 @@ export function SiteFooter() {
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <h4 className="font-serif text-2xl text-zinc-900 mb-6">Karina Isted</h4>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-8 max-w-[40ch]">
+            <p className="text-zinc-700 text-sm leading-relaxed mb-8 max-w-[40ch]">
               Autoriseret klinisk psykolog med praksis i Solrød Strand. Medlem af
               Dansk Psykologforening og uddannet i legeterapi.
             </p>
@@ -28,7 +28,7 @@ export function SiteFooter() {
           </div>
           <div className="grid sm:grid-cols-2 gap-12">
             <div>
-              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
+              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-600 mb-6">
                 Find mig
               </h5>
               <a
@@ -43,7 +43,7 @@ export function SiteFooter() {
               </a>
             </div>
             <div>
-              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-400 mb-6">
+              <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-600 mb-6">
                 Kontakt
               </h5>
               <p className="text-sm text-zinc-600 leading-loose">
@@ -59,10 +59,10 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-20 pt-8 border-t border-zinc-950/5 flex flex-col md:flex-row justify-between gap-4">
-          <p className="text-xs text-zinc-400">
+          <p className="text-xs text-zinc-600">
             © {new Date().getFullYear()} Karina Isted. Alle rettigheder forbeholdes.
           </p>
-          <p className="text-xs text-zinc-400">Autoriseret af Styrelsen for Patientsikkerhed</p>
+          <p className="text-xs text-zinc-600">Autoriseret af Styrelsen for Patientsikkerhed</p>
         </div>
       </div>
     </footer>
