@@ -15,9 +15,9 @@ export const Route = createFileRoute("/min-tilgang")({
         property: "og:description",
         content: "Sådan arbejder jeg med børn, unge og familier.",
       },
-      { property: "og:url", content: "/min-tilgang" },
+      { property: "og:url", content: "https://karinaisted.dk/min-tilgang" },
     ],
-    links: [{ rel: "canonical", href: "/min-tilgang" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/min-tilgang" }],
     scripts: [
       breadcrumbLd([
         { name: "Hjem", path: "/" },
