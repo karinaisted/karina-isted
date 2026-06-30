@@ -89,8 +89,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Karina Isted. Klinisk psykolog i Solrød Strand" },
       { name: "twitter:description", content: "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
+      { property: "og:image", content: "https://karinaisted.dk/clinic-skylight.jpg" },
+      { name: "twitter:image", content: "https://karinaisted.dk/clinic-skylight.jpg" },
       { name: "theme-color", content: "#7FB5D8" },
     ],
     links: [
@@ -124,8 +124,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           email: "karinaisted@proton.me",
           medicalSpecialty: ["Psychiatric", "Pediatric"],
           priceRange: "1.200–1.500 kr.",
-          image:
-            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png",
+          image: "https://karinaisted.dk/clinic-skylight.jpg",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Solrød Center 70, 1. sal",
