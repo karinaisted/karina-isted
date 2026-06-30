@@ -104,10 +104,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      // Load Google Fonts CSS non-blocking: request as a stylesheet with
+      // media="print" so it doesn't block render, then flip to "all" once
+      // loaded. The <noscript> fallback below ensures functionality without JS.
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
-      },
+        media: "print",
+        onLoad: "this.media='all'",
+      } as any,
     ],
     scripts: [
       {

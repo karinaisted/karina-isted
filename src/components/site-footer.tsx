@@ -35,7 +35,7 @@ export function SiteFooter() {
                 href="https://www.google.com/maps/search/?api=1&query=Solrød+Center+70,+2680+Solrød+Strand"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-zinc-600 leading-loose hover:text-sage transition-colors"
+                className="inline-block py-2 text-sm text-zinc-700 leading-loose hover:text-sage transition-colors"
               >
                 Solrød Center 70, 1. Sal.
                 <br />
@@ -46,12 +46,11 @@ export function SiteFooter() {
               <h5 className="text-xs font-medium uppercase tracking-widest text-zinc-600 mb-6">
                 Kontakt
               </h5>
-              <p className="text-sm text-zinc-600 leading-loose">
-                <a href="mailto:karinaisted@proton.me" className="hover:text-sage transition-colors">
+              <p className="text-sm text-zinc-700 leading-loose flex flex-col gap-1">
+                <a href="mailto:karinaisted@proton.me" className="inline-block py-1 hover:text-sage transition-colors">
                   karinaisted@proton.me
                 </a>
-                <br />
-                <a href="tel:42664429" className="hover:text-sage transition-colors">
+                <a href="tel:42664429" className="inline-block py-1 hover:text-sage transition-colors">
                   42 66 44 29
                 </a>
               </p>

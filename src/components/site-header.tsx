@@ -36,7 +36,7 @@ export function SiteHeader() {
         </div>
         <button
           aria-label="Menu"
-          className="md:hidden size-10 grid place-items-center"
+          className="md:hidden min-h-11 min-w-11 grid place-items-center"
           onClick={() => setOpen((v) => !v)}
         >
           <Menu className="w-5 h-5 text-zinc-800" />
