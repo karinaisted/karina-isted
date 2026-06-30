@@ -15,3 +15,4 @@ Allow: /
 
 
 Sitemap: https://karinaisted.dk/sitemap.xml
+Sitemap: https://www.karinaisted.dk/sitemap.xml
