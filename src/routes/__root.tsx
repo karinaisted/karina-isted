@@ -91,12 +91,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Autoriseret klinisk psykolog. Samtaler til børn, unge og forældre i trygge rammer i Solrød Strand." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a6fd58a0-30a1-4c96-8b36-ffd446483e61/id-preview-0e025610--31e381f6-3dd4-4eb3-b809-a8717e2e0b60.lovable.app-1781725038018.png" },
+      { name: "theme-color", content: "#7FB5D8" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
