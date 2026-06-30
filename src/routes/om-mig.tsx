@@ -26,10 +26,10 @@ export const Route = createFileRoute("/om-mig")({
         "@type": "Person",
         name: "Karina Isted",
         jobTitle: "Autoriseret klinisk psykolog",
-        url: "https://karina-isted.lovable.app/om-mig",
-        image: "https://karina-isted.lovable.app/cdn-assets/om-mig-portrait-v2.jpg",
+        url: "https://karinaisted.dk/om-mig",
+        image: "https://karinaisted.dk/cdn-assets/om-mig-portrait-v2.jpg",
         alumniOf: { "@type": "CollegeOrUniversity", name: "Syddansk Universitet" },
-        worksFor: { "@id": "https://karina-isted.lovable.app/#business" },
+        worksFor: { "@id": "https://karinaisted.dk/#business" },
         knowsAbout: [
           "Børnepsykologi",
           "Legeterapi",

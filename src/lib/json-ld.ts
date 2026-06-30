@@ -1,4 +1,4 @@
-const SITE_URL = "https://karina-isted.lovable.app";
+const SITE_URL = "https://karinaisted.dk";
 
 export function jsonLd(data: Record<string, unknown>) {
   return {
