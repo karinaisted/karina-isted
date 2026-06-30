@@ -18,9 +18,9 @@ export const Route = createFileRoute("/om-mig")({
         content:
           "Autoriseret klinisk psykolog med baggrund i pædagogik og legeterapi.",
       },
-      { property: "og:url", content: "/om-mig" },
+      { property: "og:url", content: "https://karinaisted.dk/om-mig" },
     ],
-    links: [{ rel: "canonical", href: "/om-mig" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/om-mig" }],
     scripts: [
       jsonLd({
         "@type": "Person",

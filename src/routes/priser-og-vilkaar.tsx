@@ -15,9 +15,9 @@ export const Route = createFileRoute("/priser-og-vilkaar")({
         property: "og:description",
         content: "Priser, afbud, tilskud og tavshedspligt.",
       },
-      { property: "og:url", content: "/priser-og-vilkaar" },
+      { property: "og:url", content: "https://karinaisted.dk/priser-og-vilkaar" },
     ],
-    links: [{ rel: "canonical", href: "/priser-og-vilkaar" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/priser-og-vilkaar" }],
     scripts: [
       jsonLd({
         "@type": "FAQPage",

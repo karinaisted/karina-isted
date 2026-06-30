@@ -15,9 +15,9 @@ export const Route = createFileRoute("/kontakt")({
         property: "og:description",
         content: "Sådan kontakter du mig. Online booking, telefon og mail.",
       },
-      { property: "og:url", content: "/kontakt" },
+      { property: "og:url", content: "https://karinaisted.dk/kontakt" },
     ],
-    links: [{ rel: "canonical", href: "/kontakt" }],
+    links: [{ rel: "canonical", href: "https://karinaisted.dk/kontakt" }],
     scripts: [
       breadcrumbLd([
         { name: "Hjem", path: "/" },
