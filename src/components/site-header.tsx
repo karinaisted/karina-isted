@@ -39,8 +39,7 @@ export function SiteHeader() {
           className="md:hidden size-10 grid place-items-center"
           onClick={() => setOpen((v) => !v)}
         >
-          <div className="w-5 h-px bg-zinc-800 mb-1" />
-          <div className="w-5 h-px bg-zinc-800" />
+          <Menu className="w-5 h-5 text-zinc-800" />
         </button>
       </div>
       {open && (
